@@ -101,8 +101,8 @@
             <div class="icon-box">
          <!--      <div class="icon"><i class="bx bx-tachometer"></i></div>-->
          <div class="icon"><img src="assets/img/stav/Bit_logo.svg.png" class="img-fluid" alt=""></div>
-              <h4><a href="https://apps.apple.com/us/app/bit-%D7%91%D7%99%D7%98/id1182007739" target="_blank">פתח את אפליקציית ביט</a>
-              </h4>
+         <a href="#" id="bitAppLink" class="btn btn-primary">פתח את אפליקציית ביט</a>
+        </h4>
               <p>העברה בביט למספר הטלפון  : 05...</p>
             </div>
           </div>
@@ -198,7 +198,25 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var bitAppLink = document.getElementById('bitAppLink');
+    
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+        // Redirect based on the user's device
+        if (/android/i.test(userAgent)) {
+            bitAppLink.href = "https://play.google.com/store/apps/details?id=com.bits.of.gold"; // Put the Android URL here
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            bitAppLink.href = "https://apps.apple.com/us/app/bit-%D7%91%D7%99%D7%98/id1182007739"; // Put the iOS URL here
+        } else {
+            // For non-Android and non-iOS devices, you might want to link to a website or provide instructions
+            bitAppLink.href = "https://www.bitpay.co.il/"; // Put a general URL or another instruction
+            bitAppLink.target = "_blank"; // Opens the link in a new tab if it's not an app link
+        }
+    });
+    </script>
+    
 </body>
 
 </html>
