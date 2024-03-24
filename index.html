@@ -91,7 +91,7 @@
                     <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-">
                         <div class="icon-box mx-auto">
                             <div class="icon mb-3"><img src="assets/img/stav/paybox.png" class="img-fluid" alt=""></div>
-                            <h4><a href="https://www.payboxapp.com/" target="_blank">קישור לפייבוקס</a></h4>
+                            <a href="#" id="payboxAppLink" class="btn btn-primary">פתח את אפליקציית פייבוקס</a>
                             <p>ניתן להעביר בפייבוקס</p>
                         </div>
                     </div>
@@ -221,8 +221,28 @@
                     bitAppLink.target = "_blank"; // Opens the link in a new tab if it's not an app link
                 }
             });
+            </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var payboxAppLink = document.getElementById('payboxAppLink');
+        
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+            // Redirect based on the user's device
+            if (/android/i.test(userAgent)) {
+                // Assuming you have the Play Store link for Paybox
+                payboxAppLink.href = "https://play.google.com/store/apps/details?id=com.paybox_app";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // The App Store link for Paybox
+                payboxAppLink.href = "https://apps.apple.com/us/app/paybox-%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D-%D7%95%D7%94%D7%A2%D7%91%D7%A8%D7%AA-%D7%9B%D7%A1%D7%A3/id895491053";
+            } else {
+                // Fallback for desktop users or others; adjust as necessary
+                payboxAppLink.href = "https://www.payboxapp.com/";
+                payboxAppLink.target = "_blank";
+            }
+        });
         </script>
-
+    
 </body>
 
 </html>
