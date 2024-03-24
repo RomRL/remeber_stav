@@ -1427,3 +1427,14 @@ section {
 .instagram-btn:hover {
   background-color: #C13584; /* A slightly darker pink for the hover state */
 }
+@media (max-width: 576px) {
+  .icon-box {
+      padding: 10px; /* Adjust padding */
+  }
+  .icon img {
+      width: 100%; /* Ensure icons/images scale within their containers */
+      max-width: 80px; /* Limit icon size */
+      height: auto;
+  }
+  /* Further adjustments as needed */
+}
