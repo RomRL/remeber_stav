@@ -76,7 +76,7 @@
             <br>
 
             <h2
-                style="font-family: 'Amatic SC', cursive; font-size: 32px; font-weight: 700; color: #3498db; text-align: center;">
+                style="font-family: 'Amatic SC', cursive; font-size: 40px; font-weight: 700; color: #3498db; text-align: center;">
                 "היית כמו שמש בעולם שכולו סתיו"
             </h2>
         </div>
@@ -130,14 +130,14 @@
                         <div class="icon-box">
                             <div class="icon mb-3"><i class="bx bx-file"></i></div>
                             <h4><a href="">העברה בנקאית</a></h4>
-                            <p>בנק יהב<br>סניף 245 עפולה<br>מס חשבון: 30018</p>
+                            <p>בנק דיסקונט 11<br>סניף 2 עפולה<br>מס חשבון: 110907142</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="icon-box">
                             <div class="icon mb-3"><img src="assets/img/stav/paybox.png" class="img-fluid" alt=""></div>
-                            <a href="#" id="payboxAppLink" class="btn btn-secondary">פתח את אפליקציית פייבוקס</a>
-                            <p>העברה בפייבוקס למספר הטלפון<br>052-5174646</p>
+                            <!-- <a href="#" id="payboxAppLink" class="btn btn-secondary">פתח את אפליקציית פייבוקס</a> -->
+                            <p>העברה בפייבוקס למספר הטלפון<br>052-517-4646</p>
                         </div>
                     </div>
 
@@ -145,7 +145,7 @@
                         <div class="icon-box">
                             <div class="icon mb-3"><img src="assets/img/stav/Bit_logo.svg.png" class="img-fluid" alt="">
                             </div>
-                            <a href="#" id="bitAppLink" class="btn btn-secondary mb-3">פתח את אפליקציית ביט</a>
+                            <a href="#" id="bitAppLink" class="btn btn-primary mb-3">פתח את אפליקציית ביט</a>
                             <p>העברה בביט למספר הטלפון<br>052-5174646</p>
                         </div>
                     </div>
@@ -250,21 +250,24 @@
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var bitAppLink = document.getElementById('bitAppLink');
-
+        
                 var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
+        
                 // Redirect based on the user's device
                 if (/android/i.test(userAgent)) {
-                    bitAppLink.href = "https://play.google.com/store/apps/details?id=com.bits.of.gold"; // Put the Android URL here
+                    // Android devices
+                    bitAppLink.href = "https://www.bitpay.co.il/app/me/5BED5BC6-36FC-43F6-BE82-8B6FEBC1E8789C65";
                 } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                    bitAppLink.href = "https://apps.apple.com/us/app/bit-%D7%91%D7%99%D7%98/id1182007739"; // Put the iOS URL here
+                    // iOS devices
+                    bitAppLink.href = "https://www.bitpay.co.il/app/me/5BED5BC6-36FC-43F6-BE82-8B6FEBC1E8789C65";
                 } else {
-                    // For non-Android and non-iOS devices, you might want to link to a website or provide instructions
-                    bitAppLink.href = "https://www.bitpay.co.il/"; // Put a general URL or another instruction
-                    bitAppLink.target = "_blank"; // Opens the link in a new tab if it's not an app link
+                    // Non-mobile devices
+                    // Optionally, you could explicitly set it to "javascript:void(0);" or leave it unchanged
+                    // bitAppLink.href = "javascript:void(0);";
                 }
             });
         </script>
+        
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var payboxAppLink = document.getElementById('payboxAppLink');
