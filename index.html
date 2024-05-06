@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>סתיו ברזני</title>
+    
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -136,8 +137,10 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="icon-box">
                             <div class="icon mb-3"><img src="assets/img/stav/paybox.png" class="img-fluid" alt=""></div>
-                            <!-- <a href="#" id="payboxAppLink" class="btn btn-secondary">פתח את אפליקציית פייבוקס</a> -->
-                            <p>העברה בפייבוקס למספר הטלפון<br>052-517-4646</p>
+                            <a href="#" id="payboxAppLink" class="btn btn-secondary">פתח את אפליקציית פייבוקס</a>
+                            <!-- <h4><a href="">Paybox</a></h4> -->
+
+                            <!-- <p>העברה בפייבוקס למספר הטלפון<br>052-517-4646</p> -->
                         </div>
                     </div>
 
@@ -168,6 +171,7 @@
                     <h2>
                         בקרו בעמוד ההנצחה באינטסגרם
                     </h2>
+                    
                     <a href="https://www.instagram.com/remember_stav_barazani/" class="btn "
                         style="background-color: #ac2bac; color: #fff;" target="_blank">
                         <i class="bi bi-instagram" style="background-color: #ac2bac;"> Instagram</i>
@@ -230,11 +234,19 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-
+                <div id="counter" class="counter-style">מבקרים באתר : 0 </div>
+                <script>
+                    const counterElement = document.getElementById('counter');
+                    let count = parseInt(localStorage.getItem('visitCount')) || 0;
+                    count++;
+                    localStorage.setItem('visitCount', count);
+                    counterElement.innerText = 'מבקרים באתר : ' + count;
+                </script>
+                
             </div>
         </section><!-- End Testimonials Section -->
 
-
+        
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
                 class="bi bi-arrow-up-short"></i></a>
 
@@ -279,14 +291,14 @@
                 // Redirect based on the user's device
                 if (/android/i.test(userAgent)) {
                     // Assuming you have the Play Store link for Paybox
-                    payboxAppLink.href = "https://play.google.com/store/apps/details?id=com.paybox_app";
+                    payboxAppLink.href = "https://payboxapp.page.link/3QZb7bnowt18jKCW7";
                 } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                     // The App Store link for Paybox
-                    payboxAppLink.href = "https://apps.apple.com/us/app/paybox-%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D-%D7%95%D7%94%D7%A2%D7%91%D7%A8%D7%AA-%D7%9B%D7%A1%D7%A3/id895491053";
+                    payboxAppLink.href = "https://payboxapp.page.link/3QZb7bnowt18jKCW7";
                 } else {
-                    // Fallback for desktop users or others; adjust as necessary
-                    payboxAppLink.href = "https://www.payboxapp.com/";
-                    payboxAppLink.target = "_blank";
+                    // Non-mobile devices
+                    // Optionally, you could explicitly set it to "javascript:void(0);" or leave it unchanged
+                    // bitAppLink.href = "javascript:void(0);";
                 }
             });
         </script>
